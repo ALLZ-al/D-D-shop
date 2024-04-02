@@ -4,56 +4,49 @@
   box-sizing: border-box;
 }
 
-.logo {
+.logoDD {
   will-change: filter;
   transition: filter 300ms;
+  width: 9.375rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.logoDD:hover {
+  filter: drop-shadow(0 0 2em #cb4754aa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardImg img {
+  height: 15.625rem;
+  object-fit: cover;
+  border-radius: 0rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cardImg {
+  margin: 1%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.284) 0%,
+    rgba(176, 68, 68, 0.42) 0%,
+    rgba(166, 148, 233, 0.453) 100%,
+    rgba(255, 255, 255, 0.703) 100%
+  );
+  border-radius: 0%;
+  border: 0.1875rem solid rgb(170, 147, 147);
+  box-shadow: 0rem 0rem 0.3125rem grey;
+  opacity: 0.9;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.sectionList {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 0; 
-}
-
-.sectionList li {
-  margin: 1.25rem;
+.cardImg:hover {
+  box-shadow: 0rem 0rem 0.5rem rgb(222, 30, 30);
+  border: 0.1875rem groove rgba(169, 31, 31, 0.592);
+  opacity: 1;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(197, 56, 34, 0.631);
-  padding: 2%;
+  box-shadow: 0rem 0.1875rem 0.625rem rgb(178, 135, 227);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(176, 68, 68, 0.661) 0%,
+    rgba(166, 148, 233, 0.764) 100%,
+    rgba(255, 255, 255, 0.922) 100%
+  );
 }
 
 .cartWidgetStyle {
@@ -65,10 +58,45 @@
   display: inline-block;
 }
 
-.messageProps{
-  width: 18.75rem;
-  border: 3px solid black;
-  border-radius: 3.125rem;
-  padding: 2%;
-  background-color: #888;
+.cardImg button {
+  background-color: red;
+  border: none;
+  border-radius: 6.25rem 0%;
+}
+.cardImg button:hover {
+  background-color: rgb(173, 0, 0);
+}
+
+.spinnerSt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttonDecre {
+  background-color: red;
+  border-radius: 50% 0%;
+  width: 3.125rem;
+  border: none;
+}
+.buttonDecre:hover,
+.buttonIncre:hover,
+.buttonCart:hover {
+  background-color: rgb(173, 0, 0);
+}
+
+.buttonIncre {
+  background-color: red;
+  border-radius: 0% 50%;
+  width: 3.125rem;
+  border: none;
+}
+.Controls,
+.Counter {
+  gap: 1.25rem;
+}
+.buttonCart {
+  background-color: red;
+  border: none;
 }
