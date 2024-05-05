@@ -1,9 +1,18 @@
-export const CartWidget = () => {
-    return(
-        <div>
-        <img className="cartWidgetStyle" src="./src/assets/carrito.png" alt="Carrito de compras" />
-        <h4 className="countCart">5</h4>
-        </div>
-    )
-}
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+import { BsCart4 } from "react-icons/bs";
 
+export const CartWidget = () => {
+  const { cart } = useContext(CartContext);
+  const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+  return (
+    <Link to={"/Cart"} className="cartLink">
+      {totalQuantity > 0 ? (
+        <div className="quantityBadge">{totalQuantity}</div>
+      ) : null}
+      <BsCart4 className="cartWidget" />
+    </Link>
+  );
+};
