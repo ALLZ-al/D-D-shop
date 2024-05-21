@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Lista de claves que queremos cargar en process.env
 const pickedKeys = [
   "REACT_APP_API_KEY",
   "REACT_APP_AUTH_DOMAIN",
@@ -11,19 +10,11 @@ const pickedKeys = [
   "REACT_APP_APP_ID",
 ];
 
+// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Cargar las variables de entorno
-  const env = loadEnv(mode, process.cwd(), "REACT_APP_");
+  const env = loadEnv(mode, process.cwd(), "");
   const processEnv = {};
-
-  // Filtrar y asignar solo las variables necesarias
-  pickedKeys.forEach((key) => {
-    if (env[key] !== undefined) {
-      processEnv[key] = env[key];
-    } else {
-      console.warn(`La variable de entorno ${key} no está definida en el archivo .env`);
-    }
-  });
+  pickedKeys.forEach((key) => (processEnv[key] = env[key]));
 
   return {
     define: {
